@@ -49,4 +49,27 @@ cacheSolve <- function(x, ...)
     m
 }
 
+M <- matrix(c(1,2,3,4),2,2)
+M
+det(M)
+solve(M)
+
+N <- makeCacheMatrix(M)
+N
+
+cacheSolve(N)
+
+cacheSolve(N) %*% M
+
+M <- matrix(c(2,2,3,4,5,6,7,8,9),3,3)
+det(M)
+N <- makeCacheMatrix(M)
+solve(M)
+cacheSolve(N)
+
+N$get()
+N$getinverse()
+
+N$get() %*% N$getinverse()
+
 
